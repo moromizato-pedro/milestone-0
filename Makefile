@@ -3,7 +3,7 @@ SOURCEDIR = srcs
 HEADERDIR = includes
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -I $(HEADERDIR) -g
+CFLAGS = -Wall -Werror -Wextra -I. -I $(HEADERDIR) -g
 LFLAGS = -lbsd -L. -lft
 
 NAME = libft.a
@@ -26,9 +26,6 @@ $(SOURCEDIR)/%.o : $(SOURCEDIR)/%.c
 # --- Testing rules and dependencies ---
 test: main.c $(NAME)
 	$(CC) $(CFLAGS) main.c -o $@ $(LFLAGS)
-so:
-	$(CC) -fPIC $(CFLAGS) $(CFILES)
-	gcc -shared -o libft.so $(OBJECTS)
 
 # --- Control rules ---
 clean:

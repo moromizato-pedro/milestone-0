@@ -107,7 +107,22 @@ int	test_strlcpy(char *dst, const char *src, unsigned int size)
 	return (1);
 }
 
-//strlcat
+int	test_strlcat(char *dst, const char *src, unsigned int size)
+{
+	unsigned int	orig;
+	unsigned int	copy;
+	char	copy_buff[50];
+
+	strcpy(copy_buff, dst);
+	printf(">	(dst_buff | copy_buff , src): (%s | %s, %s)\n", dst, copy_buff, src); 
+	orig = strlcat(dst, src, size);
+	copy = ft_strlcat(copy_buff, src, size);
+	printf("	(dst_buff | copy_buff , src): (%s | %s, %s) -->", dst, copy_buff, src); 
+	printf("copy: %u | orig: %u\n", copy, orig);
+	if (orig == copy)
+		return (0);
+	return (1);
+}
 
 int	test_toupper(char c)
 {
@@ -129,7 +144,7 @@ int	test_tolower(char c)
 	return (1);
 }
 
-int	test_strchr(char *str, char c)
+int	test_strchr(char *str, int c)
 {
 	char	*orig = strchr(str, c);
 	char	*copy = ft_strchr(str, c);
@@ -140,7 +155,7 @@ int	test_strchr(char *str, char c)
 	return (1);
 }
 
-int	test_strrchr(char *str, char c)
+int	test_strrchr(char *str, int c)
 {
 	char	*orig = strrchr(str, c);
 	char	*copy = ft_strrchr(str, c);

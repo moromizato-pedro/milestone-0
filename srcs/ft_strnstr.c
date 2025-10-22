@@ -6,40 +6,29 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 17:54:53 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/10/20 17:54:53 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/10/22 17:25:36 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *s1, char *s2, unsigned int n)
+char	*ft_strnstr(char *big, char *little, unsigned int n)
 {
-	unsigned int	idx1;
-	unsigned int	idx2;
-	char			*ptr;
-	int				start;
+	unsigned int	i;
+	unsigned int	j;
 
-	idx1 = -1;
-	idx2 = 0;
-	ptr = 0;
-	start = 0;
-	if (s2[0] == '\0')
-		return (s1);
-	while (s1[++idx1] && idx1 < n)
+	i = -1;
+	j = 0;
+	if (little[0] == '\0')
+		return ((char *)big);
+	while (big[++i] && i < n)
 	{
-		if (s1[idx1] == s2[idx2])
-		{
-			if (idx2 == 0)
-				start = idx1;
-			idx2++;
-			if (s2[idx2] == '\0')
-			{
-				ptr = &s1[start];
-				break;
-			}
-		}
-		else
-			ptr = 0;
+		j = 0;
+		while ((i + j) < n && big[i + j] == little[j]
+			&& little[j] != '\0' && big[i + j] != '\0')
+			j++;
+		if (little[j] == '\0')
+			return ((char *)(big + i));
 	}
-	return (ptr);
+	return (0);
 }

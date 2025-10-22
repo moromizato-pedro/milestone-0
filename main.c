@@ -12,15 +12,13 @@ int	main(int ac, char **av)
 	char	c;
 	int		fail;
 	int		arg;
-	int		funct_idx;
 
 	c = -1;
 	fail = 0;
 	arg = 2;
-	funct_idx = -1;
 
 	// TEST ft_isalpha.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 0 || atoi(av[1]) < 0)
 	{
 		c = 70;
 		fail = 0;
@@ -40,7 +38,7 @@ int	main(int ac, char **av)
 	}
 
 	// TEST ft_isdigit.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 1 || atoi(av[1]) < 0)
 	{
 		c = 41;
 		fail = 0;
@@ -60,7 +58,7 @@ int	main(int ac, char **av)
 	}
 
 	// TEST ft_isalnum.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 2 || atoi(av[1]) < 0)
 	{
 		c = 39;
 		fail = 0;
@@ -80,7 +78,7 @@ int	main(int ac, char **av)
 	}
 
 	// TEST ft_isascii.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 3 || atoi(av[1]) < 0)
 	{
 		c = -1;
 		fail = 0;
@@ -101,7 +99,7 @@ int	main(int ac, char **av)
 	}
 
 	// TEST ft_isprint.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 4 || atoi(av[1]) < 0)
 	{
 		c = -1;
 		fail = 0;
@@ -122,7 +120,7 @@ int	main(int ac, char **av)
 	}
 
 	// TEST ft_strlen.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 5 || atoi(av[1]) < 0)
 	{
 		fail = 0;
 		arg = 2;
@@ -145,7 +143,7 @@ int	main(int ac, char **av)
 	}
 /*
 	// TEST ft_memset.c
-	if (atoi(av[1]) == ++funct_id || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 6 || atoi(av[1]) < 0)
 	{
 		fail = 0;
 		arg = 2;
@@ -163,14 +161,14 @@ int	main(int ac, char **av)
 			printf("All tests passed successfully!\n");
 	}
 */
-//bzero
+//bzero	7
 
-//memcpy
+//memcpy	8
 
-//memmove
+//memmove	9
 
 	// TEST ft_strlcpy.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 10 || atoi(av[1]) < 0)
 	{
 		char	buff1[20] = "";
 		fail = 0;
@@ -195,10 +193,37 @@ int	main(int ac, char **av)
 			printf("All tests passed successfully!\n");
 	}
 
-//strlcat
+	// TEST ft_strlcat.c
+	if (atoi(av[1]) == 11 || atoi(av[1]) < 0)
+	{
+		char	buff1[30] = "";
+		ft_memset(buff1, 0, 30);
+		fail = 0;
+		arg = 2;
+		printf("\n\n================ FT_STRLCAT ================\n");
+		if (ac == 3)
+		{
+			printf("\n");
+			fail += test_strlcat(buff1, av[arg], atoi(av[arg + 1]));
+		}
+		else
+		{
+			fail += test_strlcat(buff1, "123", 0);
+			char	buff3[15] = "";
+			ft_memset(buff3, 0, 15);
+			ft_memset(buff3, 'r', 6);
+			buff3[0] = '\0';
+			buff3[11] = 'a';
+			fail += test_strlcat(buff3, "lorem ipsum", 15);
+			char	buff4[5] = "";
+			fail += test_strlcat(buff4, "Hell", 5);
+		}
+		if (fail == 0)
+			printf("All tests passed successfully!\n");
+	}
 
-	// [5] TEST ft_toupper.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	// TEST ft_toupper.c
+	if (atoi(av[1]) == 12 || atoi(av[1]) < 0)
 	{
 		c = 90;
 		fail = 0;
@@ -219,7 +244,7 @@ int	main(int ac, char **av)
 	}
 
 	// TEST ft_tolower.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 13 || atoi(av[1]) < 0)
 	{
 		c = 60;
 		fail = 0;
@@ -242,7 +267,7 @@ int	main(int ac, char **av)
 	}
 
 	// TEST ft_strchr.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 14 || atoi(av[1]) < 0)
 	{
 		fail = 0;
 		arg = 2;
@@ -268,8 +293,8 @@ int	main(int ac, char **av)
 			printf("All tests passed successfully!\n");
 	}
 
-	// [10] TEST ft_strrchr.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	// TEST ft_strrchr.c
+	if (atoi(av[1]) == 15 || atoi(av[1]) < 0)
 	{
 		fail = 0;
 		arg = 2;
@@ -290,43 +315,48 @@ int	main(int ac, char **av)
 			fail += test_strrchr("", 0);
 			fail += test_strrchr("Hel", 0);
 			fail += test_strrchr("Hel\0lo\0", 'o');
+			fail += test_strrchr("tripouille", 't' + 256);
 		}
 		if (fail == 0)
 			printf("All tests passed successfully!\n");
 	}
 
 	// TEST ft_strncmp.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 16 || atoi(av[1]) < 0)
 	{
 		fail = 0;
 		arg = 2;
 		printf("\n\n================ FT_STRNCMP ================\n");
-		fail += test_strncmp("Hello", "Hello", 5);
-		fail += test_strncmp("Hello", "Hello", 0);
-		fail += test_strncmp("Hello", "Hel", 5);
-		fail += test_strncmp("Hel", "Hello", 5);
-		fail += test_strncmp("llo", "Hello", 5);
-		fail += test_strncmp("Hello", "Hello", 3);
-		fail += test_strncmp("Hello", "Hemlo", 3);
-		fail += test_strncmp("Hell\0o\0", "Hello", 5);
-		fail += test_strncmp("Hello", "Hell\0o\0", 5);
-		fail += test_strncmp("", "Hel\0lo\0", 5);
-		fail += test_strncmp("Hello", "", 5);
 		if (ac == 5)
 		{
 			printf("\n");
 			fail += test_strncmp(av[arg], av[arg+1], atoi(av[arg+2]));
 		}
+		else
+		{
+			fail += test_strncmp("Hello", "Hello", 5);
+			fail += test_strncmp("Hello", "Hello", 0);
+			fail += test_strncmp("Hello", "Hel", 5);
+			fail += test_strncmp("Hel", "Hello", 5);
+			fail += test_strncmp("llo", "Hello", 5);
+			fail += test_strncmp("Hello", "Hello", 3);
+			fail += test_strncmp("Hello", "Hemlo", 3);
+			fail += test_strncmp("Hell\0o\0", "Hello", 5);
+			fail += test_strncmp("Hello", "Hell\0o\0", 5);
+			fail += test_strncmp("", "Hel\0lo\0", 5);
+			fail += test_strncmp("Hello", "", 5);
+			fail += test_strncmp("abcdef", "abc\375xx", 5);
+		}
 		if (fail == 0)
 			printf("All tests passed successfully!\n");
 	}
 
-//memchr
+//memchr	17
 
-//memcmp
+//memcmp	18
 
 	// TEST ft_strnstr.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 19 || atoi(av[1]) < 0)
 	{
 		fail = 0;
 		arg = 2;
@@ -352,7 +382,7 @@ int	main(int ac, char **av)
 	}
 
 	// TEST ft_atoi.c
-	if (atoi(av[1]) == ++funct_idx || atoi(av[1]) < 0)
+	if (atoi(av[1]) == 20 || atoi(av[1]) < 0)
 	{
 		fail = 0;
 		arg = 2;
@@ -376,8 +406,8 @@ int	main(int ac, char **av)
 			printf("All tests passed successfully!\n");
 	}
 
-//calloc
+//calloc	21
 
-//strdup
+//strdup	22
 	return (0);
 }
