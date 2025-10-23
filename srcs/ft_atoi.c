@@ -6,13 +6,13 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:00:46 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/10/22 13:38:20 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/10/23 16:05:34 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	check_char(const char *str, int *is_nbr, int *is_sign, int *res)
+static void	check_char(const char *str, int *is_nbr, int *is_sign, int *res)
 {
 	int		idx;
 	char	c;
@@ -41,7 +41,7 @@ void	check_char(const char *str, int *is_nbr, int *is_sign, int *res)
 	}
 }
 
-unsigned int	ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	is_nbr;
 	int	is_sign;

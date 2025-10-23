@@ -6,13 +6,13 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 18:50:57 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/10/22 18:58:47 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/10/23 17:37:34 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	temp[100];
 

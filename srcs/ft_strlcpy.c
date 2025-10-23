@@ -6,16 +6,16 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 10:39:25 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/10/22 15:10:53 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/10/23 16:02:48 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int	idx;
-	int				len;
+	size_t	idx;
+	int		len;
 
 	len = 0;
 	idx = -1;
