@@ -15,10 +15,10 @@
 
 int	main(void)
 {
-	char	*str = "lorem ipsum";
+	char	*str = "lorem";
 	char	*sub;
 
-	sub = ft_substr(str, 0, 10);
+	sub = ft_substr(str, 10, 15);
 	printf("res: %s\n", sub);
 	return (0);
 }

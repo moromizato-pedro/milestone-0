@@ -16,23 +16,27 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	int		s_len;
-	int		i;
+	unsigned int	s_len;
+	char			*sub;
+	size_t			i;
 
 	s_len = strlen(s);
 	i = -1;
-	sub = (char *)malloc(sizeof(char) * (len + 1));
-	printf("\ns: %s | start: %u | s_len: %d | len: %zu\n", s, start, s_len, len);
-	if (sub == NULL || start > (unsigned int)s_len)
-		return (NULL);
-	while ((size_t)++i < len && s[start + i])
+	if (start < s_len)
 	{
-		printf("sub[%d]: %c | s[%d]: %c | len: %zu\n", i, sub[i], start + i, s[i], len);
-		sub[i] = s[start + i];
-		printf("sub[%d]: %c | s[%d]: %c | len: %zu\n", i, sub[i], start + i, s[i], len);
+		if (s_len - start + 1 <= len)
+			sub = (char *)malloc(sizeof(char) * (s_len + 1 - start));
+		else
+			sub = (char *)malloc(sizeof(char) * (len + 1));
 	}
-	printf("sub: %s | s: %s\n", sub, s);
-	//sub[i] = '\0';
+	else
+		sub = malloc(1);
+	if (sub == NULL)
+		return (NULL);
+	while (++i < len && (start + i) < s_len)
+	{
+		sub[i] = s[start + i];
+	}
+	sub[i] = '\0';
 	return (sub);
 }
