@@ -1,13 +1,6 @@
 #include "libft.h"
 #include "tests.h"
 
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <bsd/string.h>
-#include <stdarg.h>
-#include <stdlib.h>
-
 int	test_isalpha(char c)
 {
 	int	copy = ft_isalpha(c);

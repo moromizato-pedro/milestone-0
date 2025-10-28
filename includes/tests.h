@@ -13,6 +13,13 @@
 #ifndef TESTS_H
 # define TESTS_H
 
+# include <stdio.h>
+# include <ctype.h>
+# include <string.h>
+# include <bsd/string.h>
+# include <stdarg.h>
+# include <stdlib.h>
+
 int	test_isalpha(char value);
 int	test_isdigit(char value);
 int	test_isalnum(char value);

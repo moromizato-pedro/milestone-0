@@ -4,7 +4,7 @@ HEADERDIR = includes
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -I. -I $(HEADERDIR) -g
-LFLAGS = -lbsd -L. -lft
+LFLAGS = -L. -lft -lbsd
 
 NAME = libft.a
 EXEC = test

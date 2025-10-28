@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
+# include <stdio.h>
 
 unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size);
 char			*ft_strchr(const char *str, int c);
@@ -23,6 +24,7 @@ char			*ft_strrchr(const char *str, int c);
 char			*ft_strnstr(const char *s1, const char *s2, size_t n);
 char			*ft_strdup(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strjoin(char const *s1, char const *s2);
 void			*ft_memset(void *ptr, int x, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t count);
 void			*ft_memmove(void *dest, const void *src, size_t n);
