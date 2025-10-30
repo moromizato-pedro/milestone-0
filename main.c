@@ -428,6 +428,7 @@ int	main(int ac, char **av)
 		}
 	}
 
+	// TEST ft_substr
 	if (ac == 1 || (ac > 1 && !strcmp(av[1], "substr")))
 	{
 		char	*res;
