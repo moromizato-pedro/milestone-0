@@ -6,7 +6,7 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:30:17 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/10/29 18:32:50 by pedro            ###   ########.fr       */
+/*   Updated: 2025/11/03 18:52:52 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,38 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*res;
 	char	*dup;
+	char	*dup_start;
+	char	*res;
 	char	*aux;
-	int	i;
 
-	i = -1;
-	res = 0;
 	dup = ft_strdup(s1);
-	aux = 0;
-	while (set[++i])
+	if (!dup)
+		return (NULL);
+	dup_start = dup;
+	aux = dup;
+	while (*dup && ft_strchr(set, *dup))
+		dup++;
+	if (ft_strlen(dup) > 0)
+		aux = dup + ft_strlen(dup) - 1;
+	while (ft_strrchr(set, *aux))
 	{
-		while (ft_strchr(dup, set[i]))
-		{
-			aux = ft_strchr(dup, set[i]);
-			ft_strlcpy(aux, aux + 1, SIZE_MAX);
-		}
-	}	
+		*aux = '\0';
+		aux--;
+	}
+	res = ft_strdup(dup);
+	if (dup_start)
+		free(dup_start);
+	if (!res)
+		return (NULL);
 	return (res);
 }
 /*
 int	main(void)
 {
-	char	*str = "Hello";
+	char	*str = "   xxxtripouille   xxx";
 
-	ft_strtrim(str, "ol");
-}*/
+	printf("str: %s | res: %s\n", str, /
+			ft_strtrim("   xxxtripouille   xxx", " x"));
+}
+*/
