@@ -6,7 +6,7 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 13:27:12 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/11/03 19:05:24 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/11/04 19:31:30 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ typedef struct s_list
 {
 	struct s_list	*next;
 	void			*content;
-}			t_list;
+}	t_list;
 unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size);
+t_list			*ft_lstnew(void *content);
+size_t			ft_strlen(const char *str);
+size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 char			**ft_split(char const *s, char c);
 char			*ft_strchr(const char *str, int c);
 char			*ft_strrchr(const char *str, int c);
@@ -45,8 +48,6 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-size_t			ft_strlen(const char *str);
-size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 int				ft_isalpha(int value);
 int				ft_isdigit(int value);
 int				ft_isalnum(int value);
