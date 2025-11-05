@@ -6,7 +6,7 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 13:27:12 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/11/04 19:31:30 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/11/05 15:22:18 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ typedef struct s_list
 }	t_list;
 unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size);
 t_list			*ft_lstnew(void *content);
+t_list			*ft_lstlast(t_list *lst);
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),\
+		void (*del)(void *));
 size_t			ft_strlen(const char *str);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 char			**ft_split(char const *s, char c);
@@ -32,7 +35,8 @@ char			*ft_strchr(const char *str, int c);
 char			*ft_strrchr(const char *str, int c);
 char			*ft_strnstr(const char *s1, const char *s2, size_t n);
 char			*ft_strdup(const char *s);
-char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_substr(char const *s, unsigned int start,\
+		size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_itoa(int n);
@@ -48,6 +52,11 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+void			ft_lstadd_front(t_list **lst, t_list *new);
+void			ft_lstadd_back(t_list **lst, t_list *new);
+void			ft_lstdelone(t_list *lst, void (*del)(void*));
+void			ft_lstclear(t_list **lst, void (*del)(void*));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
 int				ft_isalpha(int value);
 int				ft_isdigit(int value);
 int				ft_isalnum(int value);
@@ -58,5 +67,6 @@ int				ft_tolower(int c);
 int				ft_strncmp(char *s1, char *s2, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 int				ft_atoi(const char *str);
+int				ft_lstsize(t_list *lst);
 
 #endif

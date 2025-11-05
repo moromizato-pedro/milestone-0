@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 18:41:36 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/11/05 16:14:21 by pedrohe3         ###   ########.fr       */
+/*   Created: 2025/11/05 12:13:37 by pedrohe3          #+#    #+#             */
+/*   Updated: 2025/11/05 14:31:41 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t count)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned int	i;
+	t_list	*current;
+	int		count;
 
-	if (dest == src)
-		return (dest);
-	i = -1;
-	while (++i < count)
-		((char *)dest)[i] = ((char *)src)[i];
-	return (dest);
+	count = 0;
+	current = lst;
+	while (current)
+	{
+		count++;
+		current = current->next;
+	}
+	return (count);
 }
-/*
-#include <string.h>
-
-int	main(void)
-{
-	//void	*copy = NULL;
-	void	*orig = NULL;
-
-	//copy = ft_memcpy(NULL, NULL, 3);
-	orig = memcpy(NULL, NULL, 3);
-	//if (copy != orig)
-	//	printf("copy != orig\n");
-}*/
