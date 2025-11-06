@@ -1,6 +1,17 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/11/06 01:39:17 by pedrohe3          #+#    #+#              #
+#    Updated: 2025/11/06 19:09:40 by pedrohe3         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -I. -I $(HEADERDIR) -g
-LFLAGS = -L. -lft -lbsd
+CFLAGS = -Wall -Werror -Wextra 
 
 NAME = libft.a
 
