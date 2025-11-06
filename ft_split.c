@@ -6,7 +6,7 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 18:51:15 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/11/06 00:06:33 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/11/06 01:54:49 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 static void	ft_free_split(char **split)
 {
+	char	**start;
+
+	start = split;
 	while (*split)
 	{
 		free(*split);
 		split++;
 	}
+	free(start);
 }
 
 static int	ft_countwords(char const *s, char c)
