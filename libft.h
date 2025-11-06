@@ -6,7 +6,7 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 13:27:12 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/11/05 15:22:18 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/11/05 22:18:46 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
-# include <stdio.h>
 
+// Bonus part
 typedef struct s_list
 {
-	struct s_list	*next;
 	void			*content;
+	struct s_list	*next;
 }	t_list;
-unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size);
 t_list			*ft_lstnew(void *content);
+unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),\
 		void (*del)(void *));

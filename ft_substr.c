@@ -6,7 +6,7 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:41:18 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/10/23 20:44:07 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/11/06 00:08:12 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	else
 		sub = malloc(1);
-	if (sub == NULL)
+	if (!sub)
 		return (NULL);
 	while (++i < len && (start + i) < s_len)
 	{

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 11:57:35 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/11/05 20:31:49 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/11/05 22:34:02 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	main(void)
  	ft_lstadd_front(&l, n);
  	if (l == n && !strcmp(l->content, "OK"))
  	{
-		printf("l: %s | next: %s\n", (char *)l->content, (char *)l->next->content);
+		printf("l: %s | next: %s\n", (char *)l->content,
+			(char *)l->next->content);
  		printf("TEST_SUCCESS\n");
  	}
 	else
@@ -50,7 +51,8 @@ int	main(void)
  	ft_lstadd_front(&l, n);
  	if (l == n && !strcmp(l->content, "OK"))
  	{
-		printf("l: %s | next: %s\n", (char *)l->content, (char *)l->next->content);
+		printf("l: %s | next: %s\n", (char *)l->content,
+			(char *)l->next->content);
  		free(l->next);
  		free(l);
  		printf("TEST_SUCCESS\n");

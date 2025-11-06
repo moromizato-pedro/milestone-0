@@ -6,7 +6,7 @@
 /*   By: pedrohe3 <pedrohe3@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 18:51:15 by pedrohe3          #+#    #+#             */
-/*   Updated: 2025/10/30 21:07:28 by pedrohe3         ###   ########.fr       */
+/*   Updated: 2025/11/06 00:06:33 by pedrohe3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,20 +82,27 @@ char	**ft_split(char const *s, char c)
 			return (ft_free_split(split), NULL);
 		s += len;
 	}
+	split[i] = NULL;
 	return (split);
 }
 /*
+#include <stdio.h>
+
 int	main(void)
 {
 	char	**arr;
-	char	*str = "help!";
+	char	*aux;
+	char	*str = "hello!";
 	char	sep = ' ';
 
 	arr = ft_split(str, sep);
+	aux = *arr;
 	while (*arr)
 	{
 		printf("arr: %s\n", *arr);
 		arr++;
 	}
+	free(aux);
 	return (0);
-}*/
+}
+*/
